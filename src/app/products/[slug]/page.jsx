@@ -83,8 +83,8 @@ const Product = ({ params }) => {
             <div className='px-3'>
                 <CustomSlider>
                     {
-                        jsonData?.slice(10).map((list) => (
-                            <CardList list={list} />
+                        jsonData?.slice(10).map((list, index) => (
+                            <CardList kye={index} list={list} />
 
                         ))
                     }
