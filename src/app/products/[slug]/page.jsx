@@ -84,7 +84,7 @@ const Product = ({ params }) => {
                 <CustomSlider>
                     {
                         jsonData?.slice(10).map((list, index) => (
-                            <CardList kye={index} list={list} />
+                            <CardList key={index} list={list} />
 
                         ))
                     }
