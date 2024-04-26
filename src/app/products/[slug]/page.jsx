@@ -23,8 +23,8 @@ const Product = ({ params }) => {
                     <Image src={product.productImages[activeImag]?.url} alt={product.imageText} width={800} height={50} />
                     <div className='grid grid-cols-3 gap-2 pt-4 '>
                         {
-                            product.productImages?.map((pro) => (
-                                <Image  onClick={() => setActiveImg(pro.id)} key={pro.id} src={pro?.url} width={200} height={200} className={`${activeImag === pro?.id ? 'opacity-[0.5]' : 'opacity-1'} cursor-pointer`} alt="product_imgs" />
+                            product.productImages?.map((pro , index) => (
+                                <Image key={index} onClick={() => setActiveImg(pro.id)}  src={pro?.url} width={200} height={200} className={`${activeImag === pro?.id ? 'opacity-[0.5]' : 'opacity-1'} cursor-pointer`} alt="product_imgs" />
                             ))
                         }
                     </div>
