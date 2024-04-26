@@ -23,8 +23,11 @@ const Product = ({ params }) => {
                     <Image src={product.productImages[activeImag]?.url} alt={product.imageText} width={800} height={50} />
                     <div className='grid grid-cols-3 gap-2 pt-4 '>
                         {
-                            product.productImages?.map((pro , index) => (
-                                <Image key={index} onClick={() => setActiveImg(pro.id)}  src={pro?.url} width={200} height={200} className={`${activeImag === pro?.id ? 'opacity-[0.5]' : 'opacity-1'} cursor-pointer`} alt="product_imgs" />
+                            product.productImages?.map((pro, index) => (
+                                <div className='' key={index}>
+                                    <Image onClick={() => setActiveImg(pro.id)} src={pro?.url} width={200} height={200} className={`${activeImag === pro?.id ? 'opacity-[0.5]' : 'opacity-1'} cursor-pointer`} alt="product_imgs" />
+                                </div>
+
                             ))
                         }
                     </div>
@@ -65,8 +68,8 @@ const Product = ({ params }) => {
             <hr />
             <div className='px-10'>
                 <div className="text-center  ">
-                   <span className='border-yellow-400 border-t-2 text-2xl my-2' >Description </span>
-                    </div>
+                    <span className='border-yellow-400 border-t-2 text-2xl my-2' >Description </span>
+                </div>
                 <h2 className='font-bold text-3xl mb-3'>{product.imageText}</h2>
                 <p className='mb-3 text-md text-gray-500'>{product.mainPage[0].mainDescription}</p>
                 <p className='uppercase mt-5  text-gray-500 mb-5'>Detials:</p>
@@ -81,7 +84,7 @@ const Product = ({ params }) => {
                 <CustomSlider>
                     {
                         jsonData?.slice(10).map((list) => (
-                                <CardList list={list} />
+                            <CardList list={list} />
 
                         ))
                     }
